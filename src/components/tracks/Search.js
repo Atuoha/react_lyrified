@@ -25,7 +25,7 @@ class Search extends Component{
         // alert('holla at me babe!')
         if(this.state.search_keyword !== ''){
             console.log(this.state.search_keyword)
-            axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.search_keyword}&page_size=12&page=1&s_track_rating=desc&apikey=${process.env.REACT_MM_KEY}`)
+            axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.search_keyword}&page_size=12&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_MM_KEY}`)
             .then(response=>{
                 console.log(response.data)
                 dispatch({

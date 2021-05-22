@@ -13,7 +13,7 @@ function Lyrics() {
 
     useEffect(()=>{
       
-        axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${track_id}&apikey=${process.env.REACT_MM_KEY}`)
+        axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${track_id}&apikey=${process.env.REACT_APP_MM_KEY}`)
         .then(response=>{
             console.log(response.data.message.body.lyrics.lyrics_body)
             setLyrics(response.data.message.body.lyrics.lyrics_body)
@@ -22,7 +22,7 @@ function Lyrics() {
         })
         .catch(err=>console.log(err))
 
-        axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?commontrack_id=${common_track_id}&apikey=${process.env.REACT_MM_KEY}`)
+        axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?commontrack_id=${common_track_id}&apikey=${process.env.REACT_APP_MM_KEY}`)
         .then(response=>{
             console.log(response.data)
             setTrack(response.data.message.body.track)
